@@ -2,6 +2,8 @@ import { Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
+import '@/styles/globals.css'
+import '@/styles/tutorialstyle.css'
 import Navbar from "@/components/Navbar";
 
 const space = Space_Grotesk({subsets : ['latin']});

@@ -10,7 +10,9 @@ const params = {
     scope: scopes
 }
 
-const LOGIN_URL = "https://accounts.spotify.com/authorize?" + new URLSearchParams(params).toString();
+const LOGIN_URL = "https://accounts.spotify.com/authorize?" + new URLSearchParams( {
+    redirect_uri: "http://localhost:3000/api/auth/callback/spotify", // Update with your correct URI
+    scope: scopes}).toString();
 
 async function refreshAccessToken(token) {
     const params = new URLSearchParams()
