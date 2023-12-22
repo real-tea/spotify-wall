@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function Navbar() {
 
-    const [ navbarOps, setNavbarOpen] = useState(false);
+    const [ navbarOpen, setNavbarOpen] = useState(false);
 
     const { data : session } = useSession();
 

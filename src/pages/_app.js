@@ -4,6 +4,8 @@ import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 
+const space = Space_Grotesk({subsets : ['latin']});
+
 export default function App({
     Component , 
     pageProps : {session , ...pageProps},
