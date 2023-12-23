@@ -125,3 +125,6 @@ const TrackPreview = ({ track }) => {
         </div>
     );
 };
+
+
+export default TrackPreview;
