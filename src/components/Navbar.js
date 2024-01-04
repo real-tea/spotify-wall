@@ -1,17 +1,15 @@
-// import React from 'react'
-import {SignIn , useSession} from "next-auth/react";
-import Link from 'next/link';
-import { useState } from 'react';
+import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { useState } from "react";
 
 
-function Navbar() {
+const Navbar = () => {
 
-    const [ navbarOpen, setNavbarOpen] = useState(false);
+    const [navbarOpen, setNavbarOpen] = useState(false);
+    const { data: session } = useSession()
 
-    const { data : session } = useSession();
-
-  return (
-    <div className="">
+    return (
+        <div className="">
             <nav className="backdrop-filter backdrop-blur-lg bg-opacity-30 flex max-w-full w-full flex-wrap items-center justify-between px-2 py-3 absolute top-0 z-10">
                 <div className="container max-w-full px-4 flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -89,7 +87,6 @@ function Navbar() {
                 </div>
             </nav>
         </div>
-  )
+    )
 }
-
 export default Navbar

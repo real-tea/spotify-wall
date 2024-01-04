@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
-"use client";
+"use client"
 
-
-// import { initializeApp } from "firebase/app";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -11,17 +9,19 @@ import 'firebase/compat/storage';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDe37hVPALk8g3oqrJvvdKcwvZ3sly3s3Y",
-  authDomain: "wall-sf.firebaseapp.com",
-  projectId: "wall-sf",
-  storageBucket: "wall-sf.appspot.com",
-  messagingSenderId: "858892579735",
-  appId: "1:858892579735:web:75d84b3a0fff736735cad2"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
+// // const analytics = getAnalytics(app);
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
 export const storage = firebase.storage();

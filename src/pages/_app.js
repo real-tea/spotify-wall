@@ -1,20 +1,20 @@
-import { Space_Grotesk } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SessionProvider } from "next-auth/react";
-import Head from "next/head";
+import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
 import '@/styles/tutorialstyle.css'
-import Navbar from "@/components/Navbar";
-
-const space = Space_Grotesk({subsets : ['latin']});
+import { SessionProvider } from "next-auth/react"
+import { Space_Grotesk } from 'next/font/google'
+import Head from 'next/head'
+const space = Space_Grotesk({ subsets: ['latin'] })
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({
-    Component , 
-    pageProps : {session , ...pageProps},
-}){
-    return(
-        <SessionProvider session = {session}>
-            <Head>
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+
+  return (
+      <SessionProvider session={session}>
+        <Head>
           <title>THE WALLS</title>
           <meta name="google-site-verification" content="ufjB4lpFxeLeyrleMdoU3BtoNleUMd-Wb53g-gZzEiQ" />
           <meta name="google-site-verification" content="vQnQ68HdfmmibXFcdoNnSQdlzKngM4K5hLAfjXrUd4E" />
@@ -44,5 +44,6 @@ export default function App({
           <Analytics />
           <Component {...pageProps} />
         </main>
-        </SessionProvider>)
+      </SessionProvider>
+  )
 }

@@ -1,15 +1,24 @@
 import Image from "next/legacy/image";
-
-import React , {useState , useEffect , useRef } from 'react';
-
+import React, { useEffect, useState, useRef } from 'react';
+// import { driver } from "driver.js";
+// import "driver.js/dist/driver.css";
 
 const TrackPreview = ({ track }) => {
-    useEffect(()=>{
+
+    useEffect(() => {
+        // define a custom handler function
+        // for the contextmenu event
         const handleContextMenu = (e) => {
+            // prevent the right-click menu from appearing
             e.preventDefault()
         }
-        document.addEventListener("contextmenu" , handleContextMenu);
 
+        // attach the event listener to 
+        // the document object
+        document.addEventListener("contextmenu", handleContextMenu)
+
+        // clean up the event listener when 
+        // the component unmounts
         return () => {
             document.removeEventListener("contextmenu", handleContextMenu)
         }
@@ -123,8 +132,8 @@ const TrackPreview = ({ track }) => {
                 position="relative" />
             <audio loop={false} ref={audioRef}></audio>
         </div>
+
     );
 };
 
-
-export default TrackPreview;
+export default TrackPreview; 
